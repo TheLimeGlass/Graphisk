@@ -1,0 +1,11 @@
+version: "1.0.0b"
+debug: false
+
+# Converts the Enum's into proper english enums like `FADE_TYPE` will be `fade type` or `fading type` as defined in the english.lang of the jar. (Which can be edited, they parent aliases parsing)
+UseEnglishEnums: true
+
+# Broadcast all the syntax that didn't register to the console.
+NotRegisteredSyntax: false
+
+# Disables the message saying HolographicAddon was enabled.
+DisableRegisteredInfo: false
