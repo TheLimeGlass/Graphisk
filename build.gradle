@@ -1,69 +1,55 @@
+import org.apache.tools.ant.filters.ReplaceTokens
 apply plugin: 'java-library'
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-jar.archiveName = project.name + '.jar'
-
-configurations {
-    shade
-    compile.extendsFrom shade
-}
-
-sourceSets {
-    main {
-        java {
-            srcDirs = ["src"]
-        }
-    }
-}
-
 repositories {
-    mavenCentral()
-    jcenter()
-    
-    //Spigot
-    maven {
-        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-    }
-    
-    //Bungeecord Chat API
-    maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
-    
-    //Skript
-    maven {
-        url "https://raw.githubusercontent.com/bensku/mvn-repo/master"
-    }
-    
-    //HolographicDisplays
-    maven {
-        url "https://ci.filoghost.me/plugin/repository/everything/"
-    }
+	mavenCentral()
+
+	// Spigot
+	maven {
+		url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+	}
+
+	// Bungeecord Chat API
+	maven {
+		url 'https://oss.sonatype.org/content/repositories/snapshots'
+	}
+
+	// HolographicDisplays
+	maven {
+		url 'https://repo.codemc.io/repository/maven-public/'
+	}
+
+	// Skript
+	maven {
+		url 'https://repo.skriptlang.org/releases'
+	}
+
 }
 
 dependencies {
-    
-    //Skript
-    api (group: 'ch.njol', name: 'skript', version: '2.2-dev35b') {
-        transitive = false
+
+	//	Nullable annotation
+	implementation (group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '1.1.0')
+
+	// Skript
+	implementation (group: 'com.github.SkriptLang', name: 'Skript', version: '2.6.1') {
+		transitive = false
 	}
-	
-	//Nullable annotation
-	compile (group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '1.1.0')
-	
-	//Spigot/Bukkit
-	compile (group: 'org.spigotmc', name: 'spigot-api', version: '1.12.2-R0.1-SNAPSHOT')
-	compile (group: 'net.md-5', name: 'bungeecord-api', version: '1.12-SNAPSHOT')
-	
-	//HolographicDisplays
-	compile (group: 'com.gmail.filoghost.holographicdisplays', name: 'holographicdisplays-api', version: '2.2.7-SNAPSHOT')
+
+	// Spigot/Bukkit
+	implementation (group: 'org.spigotmc', name: 'spigot-api', version: '1.18.2-R0.1-SNAPSHOT')
+
+	//	HolographicDisplays
+	implementation (group: 'com.gmail.filoghost.holographicdisplays', name: 'holographicdisplays-api', version: '2.2.7-SNAPSHOT')
+
 }
 
-jar {
-    configurations.shade.each { dep ->
-        from(project.zipTree(dep)){
-            exclude 'META-INF', 'META-INF/**'
-        }
+processResources {
+	filter ReplaceTokens, tokens: ["version": project.property("version")]
+	from ('lang') {
+        include '**/*'
+        into 'lang/'
     }
 }
