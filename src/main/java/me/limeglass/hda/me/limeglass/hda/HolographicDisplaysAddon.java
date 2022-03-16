@@ -16,8 +16,7 @@ public class HolographicDisplaysAddon extends JavaPlugin {
 		instance = this;
 		try {
 			addon = Skript.registerAddon(this)
-					.loadClasses("me.limeglass.hda", "elements")
-					.setLanguageFileDirectory("lang");
+					.loadClasses("me.limeglass.hda", "elements");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

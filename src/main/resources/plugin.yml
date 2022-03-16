@@ -2,5 +2,6 @@ name: HolographicDisplaysAddon
 author: LimeGlass
 description: A Skript addon for HolographicDisplays.
 version: @version@
+api-version: 1.18
 main: me.limeglass.hda.HolographicDisplaysAddon
 depend: [Skript, HolographicDisplays]
