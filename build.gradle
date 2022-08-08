@@ -39,7 +39,7 @@ dependencies {
 	}
 
 	// Spigot/Bukkit
-	implementation (group: 'org.spigotmc', name: 'spigot-api', version: '1.19-R0.1-SNAPSHOT')
+	implementation (group: 'org.spigotmc', name: 'spigot-api', version: '1.19.2-R0.1-SNAPSHOT')
 
 	//	HolographicDisplays
 	implementation (group: 'com.gmail.filoghost.holographicdisplays', name: 'holographicdisplays-api', version: '2.4.9')
