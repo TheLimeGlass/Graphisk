@@ -27,7 +27,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew clean build
     - name: Upload Nightly Build
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       if: success()
       with:
         name: nightly-jar-builds
