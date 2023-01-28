@@ -1,7 +1,8 @@
-name: HolographicDisplaysAddon
+name: Graphisk
 author: LimeGlass
-description: A Skript addon for HolographicDisplays.
+description: A Skript addon for Holograms.
 version: @version@
-api-version: 1.18
-main: me.limeglass.hda.HolographicDisplaysAddon
-depend: [Skript, HolographicDisplays]
+api-version: 1.13
+main: me.limeglass.graphisk.Graphisk
+depend: [Skript]
+softdepend: [HolographicDisplays, Holograms, DecentHolograms]

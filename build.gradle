@@ -26,6 +26,11 @@ repositories {
 		url 'https://repo.skriptlang.org/releases'
 	}
 
+	// Decent Holograms
+	maven {
+		url 'https://jitpack.io'
+	}
+
 }
 
 dependencies {
@@ -34,7 +39,7 @@ dependencies {
 	implementation (group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '1.1.0')
 
 	// Skript
-	implementation (group: 'com.github.SkriptLang', name: 'Skript', version: '2.6.1') {
+	implementation (group: 'com.github.SkriptLang', name: 'Skript', version: '2.6.3') {
 		transitive = false
 	}
 
@@ -42,7 +47,10 @@ dependencies {
 	implementation (group: 'org.spigotmc', name: 'spigot-api', version: '1.18.2-R0.1-SNAPSHOT')
 
 	//	HolographicDisplays
-	implementation (group: 'com.gmail.filoghost.holographicdisplays', name: 'holographicdisplays-api', version: '2.2.7-SNAPSHOT')
+	implementation (group: 'me.filoghost.holographicdisplays', name: 'holographicdisplays-api', version: '3.0.0')
+
+	// Decent Holograms
+	implementation (group: 'com.github.decentsoftware-eu', name: 'decentholograms', version: '2.7.9')
 
 }
 
