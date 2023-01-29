@@ -22,12 +22,6 @@ public class Graphisk extends JavaPlugin {
 
 	public void onEnable() {
 		instance = this;
-		try {
-			addon = Skript.registerAddon(this)
-					.loadClasses("me.limeglass.graphisk", "elements");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		PluginManager pluginManager = Bukkit.getPluginManager();
 		if (pluginManager.isPluginEnabled("HolographicDisplays")) {
 			plugin = new HolographicDisplays(HolographicDisplaysAPI.get(this));
@@ -38,9 +32,17 @@ public class Graphisk extends JavaPlugin {
 			plugin = new DecentHologramsPlugin(DecentHologramsAPI.get());
 		} else if (pluginManager.isPluginEnabled("Holograms")) {
 			plugin = null;
-		} else {
+		}
+		if (plugin == null) {
 			getLogger().severe("Failed to find any hologram plugins. Disabling Graphisk.");
 			setEnabled(false);
+			return;
+		}
+		try {
+			addon = Skript.registerAddon(this)
+					.loadClasses("me.limeglass.graphisk", "elements");
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
