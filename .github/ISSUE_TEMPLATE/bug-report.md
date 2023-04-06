@@ -17,7 +17,7 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen.
 
 **Errors**
-If applicable, add errorsto help explain your problem.
+If applicable, add errors to help explain your problem.
 
 **Versions (please complete the following information):**
  - Spigot version: [e.g. 1.19.4]
