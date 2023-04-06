@@ -23,6 +23,7 @@ If applicable, add errors to help explain your problem.
  - Spigot version: [e.g. 1.19.4]
  - Skript version: [e.g. 2.6.4]
  - Graphisk version: [e.g. 2.0.0-ALPHA]
+- Hologram plugin and version: 
 
 **Additional context**
 Add any other context about the problem here.
