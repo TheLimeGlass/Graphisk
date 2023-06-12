@@ -50,7 +50,7 @@ dependencies {
 	implementation (group: 'me.filoghost.holographicdisplays', name: 'holographicdisplays-api', version: '3.0.1')
 
 	// Decent Holograms
-	implementation (group: 'com.github.decentsoftware-eu', name: 'decentholograms', version: '2.8.1')
+	implementation (group: 'com.github.decentsoftware-eu', name: 'decentholograms', version: '2.8.2')
 
 }
 
